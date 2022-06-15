@@ -1,3 +1,9 @@
 * {
   font-family: 'Source Sans Pro', sans-serif;
+  --massive-font: 80px;
+  --very-large-font: 64px;
+  --large-font: 48px;
+  --medium-font: 36px;
+  --small-font: 24px;
+  --very-small-font: 12px;
 }
