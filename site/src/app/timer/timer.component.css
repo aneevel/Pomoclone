@@ -13,6 +13,18 @@
   cursor: pointer;
 }
 
+.btn {
+  background-color: white;
+  border: 1px solid #dcddf5;
+  border-radius: 8px;
+  box-shadow: 0px 4px #bdbdc0;
+}
+
+.btn:focus {
+  box-shadow: none;
+  transform: translateY(4px);
+}
+
 #start {
   width: 10rem;
   height: 4rem;
