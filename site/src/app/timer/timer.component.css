@@ -13,10 +13,19 @@
   cursor: pointer;
 }
 
+#start {
+  width: 10rem;
+  height: 4rem;
+}
+
 #pause {
+  width: 10rem;
+  height: 4rem;
   display: none;
 }
 
 #fast-forward {
+  width: 4rem;
+  height: 4rem;
   display: none;
 }
