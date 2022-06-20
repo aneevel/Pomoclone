@@ -26,17 +26,29 @@
 }
 
 #start {
+  color: black;
+  font: inherit;
+  font-weight: 600;
+  text-transform: uppercase;
   width: 10rem;
   height: 4rem;
 }
 
 #pause {
+  color: black;
+  font: inherit;
+  font-weight: 600;
+  text-transform: uppercase;
   width: 10rem;
   height: 4rem;
   display: none;
 }
 
 #fast-forward {
+  color: black;
+  font: inherit;
+  font-weight: 600;
+  text-transform: uppercase;
   width: 4rem;
   height: 4rem;
   display: none;
