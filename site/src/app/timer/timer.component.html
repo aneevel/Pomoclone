@@ -5,14 +5,14 @@
 >
   <div id="timer" class="w-50 mx-auto">{{ timerValue }}</div>
   <div class="w-75 mx-auto pt-4 d-flex justify-content-evenly">
-      <div>
-        <button id="pause" type="button" class="btn btn-primary">Pause</button>
+      <div #pausebutton id="pause">
+        <button type="button" class="btn btn-primary">Pause</button>
       </div>
-      <div>
-        <button id="start" type="button" class="btn btn-primary">Start</button>
+      <div #startbutton id="start">
+        <button type="button" class="btn btn-primary" (click)="startCountdown()">Start</button>
       </div>
-      <div>
-        <button id="fast-forward" type="button" class="btn btn-primary">
+      <div #fastforwardbutton id="fast-forward">
+        <button type="button" class="btn btn-primary">
           Fast Forward
         </button>
       </div>
