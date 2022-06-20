@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TimerComponent implements OnInit {
 
+  timerValue: string = "25:00";
+
   constructor() { }
 
   ngOnInit(): void {
