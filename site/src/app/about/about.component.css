@@ -6,3 +6,7 @@ h2 {
   color: rgb(74, 8, 25);
   font-weight: 600;
 }
+
+h2 p {
+  font-weight: 500;
+}
