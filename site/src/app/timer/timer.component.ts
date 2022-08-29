@@ -7,9 +7,9 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
 })
 export class TimerComponent implements OnInit {
 
-  @ViewChild('pausebutton') pause:ElementRef;
-  @ViewChild('startbutton') div:ElementRef;
-  @ViewChild('fastforwardbutton') div:ElementRef;
+  //@ViewChild('pausebutton') pause:ElementRef;
+  //@ViewChild('startbutton') div:ElementRef;
+  //@ViewChild('fastforwardbutton') div:ElementRef;
 
   countingDown: boolean = false;
   timerValue: string = "25:00";
