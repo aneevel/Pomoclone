@@ -14,6 +14,9 @@
 }
 
 .btn {
+  color: black;
+  text-transform: uppercase;
+  font-size: var(--small-font);
   background-color: white;
   border: 1px solid #dcddf5;
   border-radius: 8px;
@@ -26,7 +29,6 @@
 }
 
 #start {
-  color: black;
   font: inherit;
   font-weight: 600;
   text-transform: uppercase;
@@ -35,7 +37,6 @@
 }
 
 #pause {
-  color: black;
   font: inherit;
   font-weight: 600;
   text-transform: uppercase;
@@ -45,7 +46,6 @@
 }
 
 #fast-forward {
-  color: black;
   font: inherit;
   font-weight: 600;
   text-transform: uppercase;
