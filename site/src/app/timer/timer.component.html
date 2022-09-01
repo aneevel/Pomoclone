@@ -3,18 +3,37 @@
   class="container mt-5 p-5 mb-5 w-50 flex justify-content-center"
   style="background-color: #ff6380"
 >
-  <div id="timer" class="w-50 mx-auto">{{ timerValue }}</div>
-  <div class="w-75 mx-auto pt-4 d-flex justify-content-evenly">
-      <div #pausebutton id="pause">
-        <button type="button" class="btn btn-primary">Pause</button>
-      </div>
-      <div class="d-flex align-items-center justify-content-center" #startbutton id="start">
-        <button type="button" class="btn btn-primary" (click)="startCountdown()">Start</button>
-      </div>
-      <div #fastforwardbutton id="fast-forward">
-        <button type="button" class="btn btn-primary">
+  <div
+    id="timer"
+    class="w-50 mx-auto">{{ timerValue }}
+  </div>
+  <div
+    class="w-75 mx-auto pt-4 d-flex justify-content-evenly">
+      <div
+        id="pause-fast-forward"
+        [ngClass]="{'displayed-button' : countingDown, 'hidden-button' : !countingDown}">
+        <button
+          type="button"
+          class="btn btn-primary">
+          Pause
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary">
           Fast Forward
         </button>
       </div>
+      <div
+        class="d-flex align-items-center justify-content-center"
+        id="start"
+        [ngClass]="{'displayed-button' : !countingDown, 'hidden-button' : countingDown}">
+        <button
+          type="button"
+          class="btn btn-primary"
+          (click)="startCountdown()">
+          Start
+        </button>
+      </div>
+
   </div>
 </div>

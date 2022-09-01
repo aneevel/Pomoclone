@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-timer',
@@ -6,10 +6,6 @@ import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
   styleUrls: ['./timer.component.css']
 })
 export class TimerComponent implements OnInit {
-
-  //@ViewChild('pausebutton') pause:ElementRef;
-  //@ViewChild('startbutton') div:ElementRef;
-  //@ViewChild('fastforwardbutton') div:ElementRef;
 
   countingDown: boolean = false;
   timerValue: string = "25:00";
@@ -30,27 +26,27 @@ export class TimerComponent implements OnInit {
   }
 
   enableStartButton(): void {
-
+    console.log("Enabling start button");
   }
 
   disableStartButton(): void {
-
+    console.log("Disabling start button");
   }
 
   enablePauseButton(): void {
-
+    console.log("Enabling pause button");
   }
 
   disablePauseButton(): void {
-
+    console.log("Disabling pause button");
   }
 
   enableFastForwardButton(): void {
-
+    console.log("Enabling fast forward button");
   }
 
   disableFastForwardButton(): void {
-
+    console.log("Disabling fast forward button");
   }
 
 
