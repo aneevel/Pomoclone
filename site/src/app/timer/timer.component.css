@@ -43,7 +43,6 @@
   text-transform: uppercase;
   width: 10rem;
   height: 4rem;
-  display: none;
 }
 
 #fast-forward {
@@ -52,5 +51,12 @@
   text-transform: uppercase;
   width: 4rem;
   height: 4rem;
+}
+
+.displayed-button {
+  display: inline-block;
+}
+
+.hidden-button {
   display: none;
 }

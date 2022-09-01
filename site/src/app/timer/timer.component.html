@@ -9,21 +9,7 @@
   </div>
   <div
     class="w-75 mx-auto pt-4 d-flex justify-content-evenly">
-      <div
-        id="pause-fast-forward"
-        [ngClass]="{'displayed-button' : countingDown, 'hidden-button' : !countingDown}">
-        <button
-          type="button"
-          class="btn btn-primary">
-          Pause
-        </button>
-        <button
-          type="button"
-          class="btn btn-primary">
-          Fast Forward
-        </button>
-      </div>
-      <div
+    <div
         class="d-flex align-items-center justify-content-center"
         id="start"
         [ngClass]="{'displayed-button' : !countingDown, 'hidden-button' : countingDown}">
@@ -33,7 +19,23 @@
           (click)="startCountdown()">
           Start
         </button>
-      </div>
+    </div>
+    <div
+        id="pause-fast-forward"
+        [ngClass]="{'displayed-button' : countingDown, 'hidden-button' : !countingDown}">
+        <button
+          id="pause"
+          type="button"
+          class="btn btn-primary">
+          Pause
+        </button>
+        <button
+          id="fast-forward"
+          type="button"
+          class="btn btn-primary">
+          Fast Forward
+        </button>
+    </div>
 
   </div>
 </div>
