@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class TimerComponent implements OnInit {
 
   countingDown: boolean = false;
+  counterHasTime: boolean = false;
   timerValue: string = "25:00";
 
   constructor() {}
@@ -16,38 +17,13 @@ export class TimerComponent implements OnInit {
 
   startCountdown(): void {
     this.countingDown = true;
-    this.disableStartButton();
-    this.enablePauseButton();
-    this.enableFastForwardButton();
+    this.counterHasTime = true;
+  }
+
+  pauseCountdown(): void {
+    this.countingDown = false;
   }
 
   updateTimer(): void {
-    console.log(`Updating timer ${this.timerValue}`);
   }
-
-  enableStartButton(): void {
-    console.log("Enabling start button");
-  }
-
-  disableStartButton(): void {
-    console.log("Disabling start button");
-  }
-
-  enablePauseButton(): void {
-    console.log("Enabling pause button");
-  }
-
-  disablePauseButton(): void {
-    console.log("Disabling pause button");
-  }
-
-  enableFastForwardButton(): void {
-    console.log("Enabling fast forward button");
-  }
-
-  disableFastForwardButton(): void {
-    console.log("Disabling fast forward button");
-  }
-
-
 }
