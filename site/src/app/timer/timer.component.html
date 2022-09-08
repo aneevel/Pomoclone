@@ -8,12 +8,14 @@
     class="w-50 mx-auto">{{ timerValue }}
   </div>
   <div
-    class="w-75 mx-auto pt-4 d-flex justify-content-evenly">
+    class="w-75 mx-auto pt-4 d-flex"
+    [ngClass]="{'justify-content-center' : !countingDown, 'justify-content-around' : countingDown}">
     <div
-        class="d-flex align-items-center justify-content-center"
-        id="start"
+        class="d-flex align-items-center"
+        id="start-box"
         [ngClass]="{'displayed-button' : !countingDown, 'hidden-button' : countingDown}">
         <button
+          id="start"
           type="button"
           class="btn btn-primary"
           (click)="startCountdown()">
@@ -21,18 +23,19 @@
         </button>
     </div>
     <div
+        class="d-flex w-100 justify-content-center"
         id="pause-fast-forward"
         [ngClass]="{'displayed-button' : countingDown, 'hidden-button' : !countingDown}">
         <button
           id="pause"
           type="button"
-          class="btn btn-primary">
+          class="w-25 btn btn-primary">
           Pause
         </button>
         <button
           id="fast-forward"
           type="button"
-          class="btn btn-primary">
+          class="w-25 btn btn-primary">
           Fast Forward
         </button>
     </div>

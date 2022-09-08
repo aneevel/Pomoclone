@@ -41,7 +41,7 @@
   font: inherit;
   font-weight: 600;
   text-transform: uppercase;
-  width: 10rem;
+  width: 5rem;
   height: 4rem;
 }
 
@@ -49,14 +49,14 @@
   font: inherit;
   font-weight: 600;
   text-transform: uppercase;
-  width: 4rem;
+  width: 5rem;
   height: 4rem;
 }
 
 .displayed-button {
-  display: inline-block;
+  display: flex !important;
 }
 
 .hidden-button {
-  display: none;
+  display: none !important;
 }
