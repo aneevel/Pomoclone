@@ -10,6 +10,7 @@ export class TimerComponent implements OnInit {
   countingDown: boolean = false;
   counterHasTime: boolean = false;
   timerValue: string = "25:00";
+  defaultTimerValue: string = "25:00";
 
   constructor() {}
 
@@ -20,8 +21,18 @@ export class TimerComponent implements OnInit {
     this.counterHasTime = true;
   }
 
+  resumeCountdown(): void {
+    this.countingDown = true;
+  }
+
   pauseCountdown(): void {
     this.countingDown = false;
+  }
+
+  stopCountdown(): void {
+    this.countingDown = false;
+    this.counterHasTime = false;
+    this.timerValue = this.defaultTimerValue;
   }
 
   updateTimer(): void {

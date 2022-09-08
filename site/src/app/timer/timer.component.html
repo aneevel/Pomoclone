@@ -13,7 +13,7 @@
     <div
         class="d-flex align-items-center"
         id="start-box"
-        [ngClass]="{'displayed-button' : !countingDown, 'hidden-button' : countingDown}">
+        [ngClass]="{'displayed-flex' : !countingDown && !counterHasTime, 'hidden' : countingDown || counterHasTime}">
         <button
           id="start"
           type="button"
@@ -25,18 +25,28 @@
     <div
         class="d-flex w-100 justify-content-center"
         id="pause-fast-forward"
-        [ngClass]="{'displayed-button' : countingDown, 'hidden-button' : !countingDown}">
+        [ngClass]="{'displayed-flex' : counterHasTime, 'hidden' : !counterHasTime }">
         <button
           id="pause"
           type="button"
           class="w-25 btn btn-primary"
+          [ngClass]="{'displayed-inline-block' : countingDown, 'hidden' : !countingDown}"
           (click)="pauseCountdown()">
           Pause
         </button>
         <button
+          id="resume"
+          type="button"
+          class="w-25 btn btn-primary"
+          [ngClass]="{'displayed-inline-block' : !countingDown && counterHasTime, 'hidden' : countingDown}"
+          (click)="resumeCountdown()">
+          Resume
+        </button>
+        <button
           id="fast-forward"
           type="button"
-          class="w-25 btn btn-primary">
+          class="w-25 btn btn-primary"
+          (click)="stopCountdown()">
           Fast Forward
         </button>
     </div>

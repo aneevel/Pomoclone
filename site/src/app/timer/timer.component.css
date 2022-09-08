@@ -37,7 +37,7 @@
   height: 4rem;
 }
 
-#pause {
+#pause, #fast-forward, #resume {
   font: inherit;
   font-weight: 600;
   text-transform: uppercase;
@@ -45,18 +45,14 @@
   height: 4rem;
 }
 
-#fast-forward {
-  font: inherit;
-  font-weight: 600;
-  text-transform: uppercase;
-  width: 5rem;
-  height: 4rem;
-}
-
-.displayed-button {
+.displayed-flex {
   display: flex !important;
 }
 
-.hidden-button {
+.displayed-inline-block {
+  display: inline-block !important;
+}
+
+.hidden {
   display: none !important;
 }
