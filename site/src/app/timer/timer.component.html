@@ -13,7 +13,7 @@
     <div
         class="d-flex align-items-center"
         id="start-box"
-        [ngClass]="{'displayed-flex' : !countingDown && !counterHasTime, 'hidden' : countingDown || counterHasTime}">
+        [ngClass]="{'displayed-flex' : !countingDown && !counterHasTime && !counterCompleted, 'hidden' : countingDown || counterHasTime || counterCompleted}">
         <button
           id="start"
           type="button"
@@ -48,6 +48,18 @@
           class="w-25 btn btn-primary"
           (click)="fastForward()">
           Fast Forward
+        </button>
+    </div>
+    <div
+        class="d-flex align-items-center"
+        id="done-box"
+        [ngClass]="{'displayed-flex' : counterCompleted, 'hidden' : !counterCompleted }">
+        <button
+          id="done"
+          type="button"
+          class="btn btn-primary"
+          (click)="clearCountdown()">
+          Done
         </button>
     </div>
 

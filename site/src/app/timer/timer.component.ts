@@ -9,6 +9,7 @@ export class TimerComponent implements OnInit {
 
   countingDown: boolean = false;
   counterHasTime: boolean = false;
+  counterCompleted: boolean = false;
   timerValue: string = "25:00";
   defaultTimerValue: string = "25:00";
   interval: any;
@@ -46,7 +47,13 @@ export class TimerComponent implements OnInit {
     this.countingDown = false;
     this.counterHasTime = false;
     this.timerValue = `00:00`;
+    this.displayDone();
     clearInterval(this.interval);
+  }
+
+  clearCountdown(): void {
+    this.timerValue = this.defaultTimerValue;
+    this.counterCompleted = false;
   }
 
   updateTimer(timerValue: string): void {
@@ -84,7 +91,7 @@ export class TimerComponent implements OnInit {
   }
 
   displayDone(): void {
-    this.stopCountdown();
+    this.counterCompleted = true;
     console.log("We done dog");
   }
 }
