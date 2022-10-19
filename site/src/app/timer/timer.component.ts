@@ -42,6 +42,13 @@ export class TimerComponent implements OnInit {
     clearInterval(this.interval);
   }
 
+  fastForward(): void {
+    this.countingDown = false;
+    this.counterHasTime = false;
+    this.timerValue = `00:00`;
+    clearInterval(this.interval);
+  }
+
   updateTimer(timerValue: string): void {
 
     if (this.timerIsDone())
