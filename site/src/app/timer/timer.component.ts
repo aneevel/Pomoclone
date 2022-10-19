@@ -44,11 +44,25 @@ export class TimerComponent implements OnInit {
 
   updateTimer(timerValue: string): void {
 
-    let seconds = timerValue.slice(3);
+    let seconds = parseInt(timerValue.slice(3));
     console.log(`Seconds value ${seconds}`);
 
-    let minutes = timerValue.slice(0, 2);
+    let minutes = parseInt(timerValue.slice(0, 2));
     console.log(`Minutes value ${minutes}`);
+
+    seconds = this.updateSeconds(seconds);
+    minutes = this.updateMinutes(minutes);
   }
 
+  updateSeconds(seconds: number): number {
+
+    if (seconds === 0)
+      return 59;
+    else
+      return seconds - 1;
+  }
+
+  updateMinutes(minutes: number): number {
+    return minutes - 1;
+  }
 }
