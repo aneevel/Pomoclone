@@ -22,12 +22,12 @@ export class TimerComponent implements OnInit {
   startCountdown(): void {
     this.countingDown = true;
     this.counterHasTime = true;
-    this.interval = setInterval((this.updateTimer), 1000, this.timerValue);
+    this.interval = setInterval(() => this.updateTimer(this.timerValue), 1000);
   }
 
   resumeCountdown(): void {
     this.countingDown = true;
-    this.interval = setInterval((this.updateTimer), 1000);
+    this.interval = setInterval(() => this.updateTimer(this.timerValue), 1000);
   }
 
   pauseCountdown(): void {
@@ -44,14 +44,20 @@ export class TimerComponent implements OnInit {
 
   updateTimer(timerValue: string): void {
 
-    let seconds = parseInt(timerValue.slice(3));
-    console.log(`Seconds value ${seconds}`);
+    if (this.timerIsDone())
+    {
+      this.displayDone();
+      return;
+    }
 
+    let seconds = parseInt(timerValue.slice(3));
     let minutes = parseInt(timerValue.slice(0, 2));
-    console.log(`Minutes value ${minutes}`);
 
     seconds = this.updateSeconds(seconds);
-    minutes = this.updateMinutes(minutes);
+    if (seconds === 59)
+      minutes = this.updateMinutes(minutes);
+
+    this.timerValue = `${minutes}:${seconds}`;
   }
 
   updateSeconds(seconds: number): number {
@@ -64,5 +70,14 @@ export class TimerComponent implements OnInit {
 
   updateMinutes(minutes: number): number {
     return minutes - 1;
+  }
+
+  timerIsDone(): boolean {
+    return (this.timerValue === `00:00`);
+  }
+
+  displayDone(): void {
+    this.stopCountdown();
+    console.log("We done dog");
   }
 }
