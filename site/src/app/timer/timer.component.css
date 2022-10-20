@@ -9,6 +9,12 @@
   text-align: center;
 }
 
+#focus-prompt h2 {
+  color: white;
+  font-size: var(--large-font);
+  font-weight: 500px;
+}
+
 #timer:hover {
   cursor: pointer;
 }
@@ -29,7 +35,7 @@
   transform: translateY(4px);
 }
 
-#start {
+#start, #done {
   font: inherit;
   font-weight: 600;
   text-transform: uppercase;

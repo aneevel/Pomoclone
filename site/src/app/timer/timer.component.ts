@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Howl, Howler } from 'howler';
 
 @Component({
   selector: 'app-timer',
@@ -13,8 +14,12 @@ export class TimerComponent implements OnInit {
   timerValue: string = "25:00";
   defaultTimerValue: string = "25:00";
   interval: any;
+  alarm: Howl;
 
   constructor() {
+    this.alarm = new Howl({
+      src: ["../../assets/audio/alarm.wav"],
+   });
   }
 
   ngOnInit(): void {
@@ -54,6 +59,7 @@ export class TimerComponent implements OnInit {
   clearCountdown(): void {
     this.timerValue = this.defaultTimerValue;
     this.counterCompleted = false;
+    this.alarm.stop();
   }
 
   updateTimer(timerValue: string): void {
@@ -92,6 +98,6 @@ export class TimerComponent implements OnInit {
 
   displayDone(): void {
     this.counterCompleted = true;
-    console.log("We done dog");
+    this.alarm.play();
   }
 }

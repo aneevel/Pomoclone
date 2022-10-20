@@ -3,6 +3,29 @@
   class="container mt-5 p-5 mb-5 w-50 flex justify-content-center"
   style="background-color: #ff6380"
 >
+<div
+  id="focus-prompt"
+  class="pt-2 mx-auto"
+  >
+  <h2
+    class="text-center"
+    [ngClass]="{'hidden' : !counterCompleted }"
+  >
+  All done!
+  </h2>
+  <h2
+    class="text-center"
+    [ngClass]="{'hidden' : counterCompleted || countingDown || counterHasTime }"
+  >
+  Plan your next task!
+  </h2>
+  <h2
+    class="text-center"
+    [ngClass]="{'hidden' : !countingDown }"
+  >
+  Focus time!
+  </h2>
+  </div>
   <div
     id="timer"
     class="w-50 mx-auto">{{ timerValue }}
