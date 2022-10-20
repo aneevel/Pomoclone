@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Howl, Howler } from 'howler';
+import { Howl } from 'howler';
 
 @Component({
   selector: 'app-timer',
@@ -12,7 +12,9 @@ export class TimerComponent implements OnInit {
   counterHasTime: boolean = false;
   counterCompleted: boolean = false;
   timerValue: string = "25:00";
-  defaultTimerValue: string = "25:00";
+  defaultWorkTimerValue: string = "25:00";
+  defaultShortBreakTimerValue: string = "5:00";
+  currentState: string;
   interval: any;
   alarm: Howl;
 
@@ -20,6 +22,7 @@ export class TimerComponent implements OnInit {
     this.alarm = new Howl({
       src: ["../../assets/audio/alarm.wav"],
    });
+   this.currentState = "focus";
   }
 
   ngOnInit(): void {
@@ -44,7 +47,7 @@ export class TimerComponent implements OnInit {
   stopCountdown(): void {
     this.countingDown = false;
     this.counterHasTime = false;
-    this.timerValue = this.defaultTimerValue;
+    this.timerValue = this.defaultWorkTimerValue;
     clearInterval(this.interval);
   }
 
@@ -57,9 +60,16 @@ export class TimerComponent implements OnInit {
   }
 
   clearCountdown(): void {
-    this.timerValue = this.defaultTimerValue;
+
+    this.timerValue = this.defaultWorkTimerValue;
     this.counterCompleted = false;
     this.alarm.stop();
+  }
+
+  resetTimer(): void {
+    this.currentState === 'focus'
+    ? this.timerValue = this.defaultWorkTimerValue
+    : this.timerValue = this.defaultShortBreakTimerValue;
   }
 
   updateTimer(timerValue: string): void {
@@ -99,5 +109,12 @@ export class TimerComponent implements OnInit {
   displayDone(): void {
     this.counterCompleted = true;
     this.alarm.play();
+    this.switchState();
+  }
+
+  switchState(): void {
+    this.currentState === 'focus'
+      ? this.currentState = 'shortBreak'
+      : this.currentState = 'focus';
   }
 }
