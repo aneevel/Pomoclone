@@ -47,7 +47,7 @@ export class TimerComponent implements OnInit {
   stopCountdown(): void {
     this.countingDown = false;
     this.counterHasTime = false;
-    this.timerValue = this.defaultWorkTimerValue;
+    this.resetTimer();
     clearInterval(this.interval);
   }
 
@@ -61,7 +61,7 @@ export class TimerComponent implements OnInit {
 
   clearCountdown(): void {
 
-    this.timerValue = this.defaultWorkTimerValue;
+    this.resetTimer();
     this.counterCompleted = false;
     this.alarm.stop();
   }
@@ -87,7 +87,9 @@ export class TimerComponent implements OnInit {
     if (seconds === 59)
       minutes = this.updateMinutes(minutes);
 
-    this.timerValue = `${minutes}:${seconds}`;
+    let minutesDisplay = this.padValue(minutes);
+    let secondsDisplay = this.padValue(seconds);
+    this.timerValue = `${minutesDisplay}:${secondsDisplay}`;
   }
 
   updateSeconds(seconds: number): number {
@@ -100,6 +102,12 @@ export class TimerComponent implements OnInit {
 
   updateMinutes(minutes: number): number {
     return minutes - 1;
+  }
+
+  padValue(value: number): string {
+    if (value < 10)
+      return `0${value.toString()}`;
+    return value.toString();
   }
 
   timerIsDone(): boolean {
@@ -116,5 +124,17 @@ export class TimerComponent implements OnInit {
     this.currentState === 'focus'
       ? this.currentState = 'shortBreak'
       : this.currentState = 'focus';
+
+    this.initState();
+    console.log(this.currentState);
+  }
+
+  initState(): void {
+    if (this.currentState === 'focus')
+    {
+
+    } else {
+
+    }
   }
 }
