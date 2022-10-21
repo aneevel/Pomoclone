@@ -1,7 +1,12 @@
-<div
+<div class="container-fluid h-25 p-2 pt-0 mx-auto">
+  <div id="title-container" class="container-fluid w-75 p-2 pt-4 pb-4 mx-auto" style="background-color: #FF6380">
+    <h1 class="text-center"><a href="/">PomoClone</a></h1>
+  </div>
+    <div
   id="clock-container"
   class="container mt-5 p-5 mb-5 w-50 flex justify-content-center"
   style="background-color: #ff6380"
+  [ngStyle]=" {'background-color': this.currentState === 'focus' ? '#ff6380' : '#000000'  }"
 >
 <div
   id="focus-prompt"
@@ -15,15 +20,21 @@
   </h2>
   <h2
     class="text-center"
-    [ngClass]="{'hidden' : counterCompleted || countingDown || counterHasTime }"
+    [ngClass]="{'hidden' : counterCompleted || countingDown || counterHasTime || this.currentState !== 'focus' }"
   >
   Plan your next task!
   </h2>
   <h2
     class="text-center"
-    [ngClass]="{'hidden' : !countingDown }"
+    [ngClass]="{'hidden' : !countingDown || this.currentState !== 'focus'}"
   >
   Focus time!
+  </h2>
+  <h2
+    class="text-center"
+    [ngClass]="{'hidden' : this.currentState !== 'shortBreak' || counterCompleted }"
+    >
+  Rest up a bit.
   </h2>
   </div>
   <div
@@ -87,4 +98,5 @@
     </div>
 
   </div>
+</div>
 </div>

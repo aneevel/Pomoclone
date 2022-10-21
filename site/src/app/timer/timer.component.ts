@@ -13,7 +13,7 @@ export class TimerComponent implements OnInit {
   counterCompleted: boolean = false;
   timerValue: string = "25:00";
   defaultWorkTimerValue: string = "25:00";
-  defaultShortBreakTimerValue: string = "5:00";
+  defaultShortBreakTimerValue: string = "05:00";
   currentState: string;
   interval: any;
   alarm: Howl;
