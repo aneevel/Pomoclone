@@ -1,12 +1,19 @@
-<div class="container-fluid h-25 p-2 pt-0 mx-auto">
-  <div id="title-container" class="container-fluid w-75 p-2 pt-4 pb-4 mx-auto" style="background-color: #FF6380">
+<div
+  class="container-fluid h-25 p-2 pt-0 mx-auto"
+  [ngStyle]=" {'background-color': this.currentState === 'focus' ? 'var(--deep-red-background)' : 'var(--deep-blue-background)'  }">
+  <div
+    id="title-container"
+    class="container-fluid w-75 p-2 pt-4 pb-4 mx-auto"
+    [ngStyle]=" {'background-color': this.currentState === 'focus' ? 'var(--red-background)' : 'var(--blue-background)',
+      'box-shadow': this.currentState === 'focus' ? 'var(--red-box-shadow)' : 'var(--blue-box-shadow)'}"
+    >
     <h1 class="text-center"><a href="/">PomoClone</a></h1>
   </div>
     <div
   id="clock-container"
   class="container mt-5 p-5 mb-5 w-50 flex justify-content-center"
-  style="background-color: #ff6380"
-  [ngStyle]=" {'background-color': this.currentState === 'focus' ? '#ff6380' : '#000000'  }"
+  [ngStyle]=" {'background-color': this.currentState === 'focus' ? 'var(--red-background)' : 'var(--blue-background)',
+  'box-shadow': this.currentState === 'focus' ? 'var(--red-box-shadow)' : 'var(--blue-box-shadow)'}"
 >
 <div
   id="focus-prompt"

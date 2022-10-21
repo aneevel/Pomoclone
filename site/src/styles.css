@@ -6,4 +6,10 @@
   --medium-font: 36px;
   --small-font: 24px;
   --very-small-font: 12px;
+  --red-background: #ff6380;
+  --deep-red-background: #FF6347;
+  --red-box-shadow: 10px 5px 5px rgb(204, 14, 14);
+  --blue-background: #4fd1b5;
+  --deep-blue-background: #3a9e89;
+  --blue-box-shadow: 10px 5px 5px rgb(24, 84, 71);
 }

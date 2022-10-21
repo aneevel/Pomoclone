@@ -124,17 +124,5 @@ export class TimerComponent implements OnInit {
     this.currentState === 'focus'
       ? this.currentState = 'shortBreak'
       : this.currentState = 'focus';
-
-    this.initState();
-    console.log(this.currentState);
-  }
-
-  initState(): void {
-    if (this.currentState === 'focus')
-    {
-
-    } else {
-
-    }
   }
 }
