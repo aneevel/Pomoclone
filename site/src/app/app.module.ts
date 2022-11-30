@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { TimerComponent } from './timer/timer.component';
 import { AboutComponent } from './about/about.component';
+import { TasksComponent } from './tasks/tasks.component';
+import { TaskComponent } from './task/task.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TimerComponent,
-    AboutComponent
+    AboutComponent,
+    TasksComponent,
+    TaskComponent
   ],
   imports: [
     BrowserModule,
