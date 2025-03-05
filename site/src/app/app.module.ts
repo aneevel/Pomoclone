@@ -8,6 +8,7 @@ import { TimerComponent } from './timer/timer.component';
 import { AboutComponent } from './about/about.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { TaskComponent } from './task/task.component';
+import { CreateTaskComponent } from './create-task/create-task.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { TaskComponent } from './task/task.component';
     TimerComponent,
     AboutComponent,
     TasksComponent,
-    TaskComponent
+    TaskComponent,
+    CreateTaskComponent
   ],
   imports: [
     BrowserModule,
