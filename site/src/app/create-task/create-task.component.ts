@@ -29,7 +29,16 @@ export class CreateTaskComponent implements OnInit, AfterViewInit {
   }
 
   toggleCreateModal(): void {
-    console.log("opening add task modal");
+
+    if (this.createTaskButton.nativeElement.style.display === 'block')
+      this.renderer.setStyle(this.createTaskButton.nativeElement, 'display', 'none');
+    else
+      this.renderer.setStyle(this.createTaskButton.nativeElement, 'display', 'block');
+
+    if (this.createTaskModal.nativeElement.style.display === 'block')
+      this.renderer.setStyle(this.createTaskModal.nativeElement, 'display', 'none');
+    else
+      this.renderer.setStyle(this.createTaskModal.nativeElement, 'display', 'block');
   }
 
 }
