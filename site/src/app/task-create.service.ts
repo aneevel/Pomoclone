@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { Task } from './task/task';
 
 @Injectable({
@@ -6,18 +7,17 @@ import { Task } from './task/task';
 })
 export class TaskCreateService {
 
-  tasks: Task[] = [];
+  protected tasksSubject = new BehaviorSubject<Task[]>([]);
+  public tasks$ = this.tasksSubject.asObservable();
 
   constructor() { }
 
   addTask(description: string, pomodoros: number): void {
-    this.tasks = [...this.tasks,
+    this.tasksSubject.next([...this.tasksSubject.value,
     {
       description: description,
       pomodorosToComplete: pomodoros,
       pomodorosCompleted: 0
-    }];
-
-    console.log(this.tasks);
+    }]);
   }
 }

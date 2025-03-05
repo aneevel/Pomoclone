@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { TaskComponent } from '../task/task.component';
 import { CreateTaskComponent } from '../create-task/create-task.component';
+import { TaskCreateService } from '../task-create.service';
+import { Task } from '../task/task';
 
 import { NgFor } from '@angular/common';
 
@@ -17,7 +19,13 @@ import { NgFor } from '@angular/common';
 })
 export class TasksComponent implements OnInit {
 
-  constructor() { }
+  tasks: Task[] = [];
+
+  constructor(private taskCreateService: TaskCreateService) {
+    this.taskCreateService.tasks$.subscribe(tasks =>
+      this.tasks = tasks
+    );
+  }
 
   ngOnInit(): void {
   }
