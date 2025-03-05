@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, Renderer2 } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faPlus, faUpLong, faDownLong } from '@fortawesome/free-solid-svg-icons';
 
@@ -11,15 +11,21 @@ import { faPlus, faUpLong, faDownLong } from '@fortawesome/free-solid-svg-icons'
   styleUrls: ['./create-task.component.css'],
   standalone: true
 })
-export class CreateTaskComponent implements OnInit {
+export class CreateTaskComponent implements OnInit, AfterViewInit {
+  @ViewChild('createTaskModal') createTaskModal!: ElementRef;
+  @ViewChild('createTaskButton') createTaskButton!: ElementRef;
 
   faPlus = faPlus;
   faUpLong = faUpLong;
   faDownLong = faDownLong;
 
-  constructor() { }
+  constructor(private renderer: Renderer2) { }
 
   ngOnInit(): void {
+  }
+
+  ngAfterViewInit(): void {
+
   }
 
   toggleCreateModal(): void {
