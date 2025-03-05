@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { TaskComponent } from '../task/task.component';
 import { CreateTaskComponent } from '../create-task/create-task.component';
 
-import { TASKS } from '../task/task';
 import { NgFor } from '@angular/common';
 
 @Component({
@@ -17,8 +16,6 @@ import { NgFor } from '@angular/common';
   standalone: true
 })
 export class TasksComponent implements OnInit {
-
-  tasks = TASKS;
 
   constructor() { }
 

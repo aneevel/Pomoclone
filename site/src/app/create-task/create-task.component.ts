@@ -1,11 +1,14 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit, Renderer2 } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TaskCreateService } from '../task-create.service';
 import { faPlus, faUpLong, faDownLong } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-create-task',
   imports: [
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule
   ],
   templateUrl: './create-task.component.html',
   styleUrls: ['./create-task.component.css'],
@@ -15,17 +18,29 @@ export class CreateTaskComponent implements OnInit, AfterViewInit {
   @ViewChild('createTaskModal') createTaskModal!: ElementRef;
   @ViewChild('createTaskButton') createTaskButton!: ElementRef;
 
+  pomodoros: number = 1;
+
   faPlus = faPlus;
   faUpLong = faUpLong;
   faDownLong = faDownLong;
 
-  constructor(private renderer: Renderer2) { }
+  constructor(private renderer: Renderer2,
+    private taskCreateService: TaskCreateService) { }
 
   ngOnInit(): void {
   }
 
   ngAfterViewInit(): void {
 
+  }
+
+  incrementPomodoros(): void {
+    this.pomodoros++;
+  }
+
+  decrementPomodoros(): void {
+    if (this.pomodoros > 1)
+      this.pomodoros--;
   }
 
   toggleCreateModal(): void {
@@ -39,6 +54,10 @@ export class CreateTaskComponent implements OnInit, AfterViewInit {
       this.renderer.setStyle(this.createTaskModal.nativeElement, 'display', 'none');
     else
       this.renderer.setStyle(this.createTaskModal.nativeElement, 'display', 'block');
+  }
+
+  saveTask(): void {
+    this.taskCreateService.addTask();
   }
 
 }

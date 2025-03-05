@@ -10,11 +10,11 @@
   </div>
   <div class="create-task-modal-pomodoros">
     <h3>How many pomodoros do you think this will take?</h3>
-    <input type="number" placeholder=1 />
-    <button class="up-button"><fa-icon [icon]="faUpLong"></fa-icon></button>
-    <button class="down-button"><fa-icon [icon]="faDownLong"></fa-icon></button>
+    <input [(ngModel)]="pomodoros" type="number" />
+    <button (click)="incrementPomodoros()" class="up-button"><fa-icon [icon]="faUpLong"></fa-icon></button>
+    <button (click)="decrementPomodoros()" class="down-button"><fa-icon [icon]="faDownLong"></fa-icon></button>
     <div class="create-task-modal-buttons">
-      <button>Save</button>
+      <button (click)="this.saveTask()">Save</button>
       <button (click)="this.toggleCreateModal()">Cancel</button>
     </div>
   </div>
