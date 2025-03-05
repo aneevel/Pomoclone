@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Howl } from 'howler';
 
 @Component({
-    selector: 'app-timer',
-    templateUrl: './timer.component.html',
-    styleUrls: ['./timer.component.css'],
-    standalone: false
+  selector: 'app-timer',
+  imports: [CommonModule],
+  templateUrl: './timer.component.html',
+  styleUrls: ['./timer.component.css'],
+  standalone: true
 })
 export class TimerComponent implements OnInit {
 
@@ -22,8 +24,8 @@ export class TimerComponent implements OnInit {
   constructor() {
     this.alarm = new Howl({
       src: ["../../assets/audio/alarm.wav"],
-   });
-   this.currentState = "focus";
+    });
+    this.currentState = "focus";
   }
 
   ngOnInit(): void {
@@ -69,14 +71,13 @@ export class TimerComponent implements OnInit {
 
   resetTimer(): void {
     this.currentState === 'focus'
-    ? this.timerValue = this.defaultWorkTimerValue
-    : this.timerValue = this.defaultShortBreakTimerValue;
+      ? this.timerValue = this.defaultWorkTimerValue
+      : this.timerValue = this.defaultShortBreakTimerValue;
   }
 
   updateTimer(timerValue: string): void {
 
-    if (this.timerIsDone())
-    {
+    if (this.timerIsDone()) {
       this.displayDone();
       return;
     }
