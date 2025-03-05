@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faPlus, faUpLong, faDownLong } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-create-task',
@@ -14,13 +14,15 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 export class CreateTaskComponent implements OnInit {
 
   faPlus = faPlus;
+  faUpLong = faUpLong;
+  faDownLong = faDownLong;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  onAdd(): void {
+  toggleCreateModal(): void {
     console.log("opening add task modal");
   }
 

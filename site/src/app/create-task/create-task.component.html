@@ -1,4 +1,16 @@
-<div (click)="this.onAdd()" class="create-task-container">
-  <fa-icon [icon]="faPlus"></fa-icon>
-  <div class="create-task-prompt">Add New Task</div>
+<div (click)="this.toggleCreateModal()" class="create-task-container">
+  <div class="create-task-button">
+    <fa-icon [icon]="faPlus"></fa-icon>
+    <div class="create-task-prompt">Add New Task</div>
+  </div>
+  <div class="create-task-modal">
+    <div class="create-task-modal-description">
+      <input type="text" placeholder="What do you want to accomplish?" />
+    </div>
+    <div class="create-task-modal-pomodoros">
+      <h3>How many pomodoros do you think this will take?</h3>
+      <button class="up-button"><fa-icon [icon]="faUpLong"></fa-icon></button>
+      <button class="down-button"><fa-icon [icon]="faDownLong"></fa-icon></button>
+    </div>
+  </div>
 </div>
