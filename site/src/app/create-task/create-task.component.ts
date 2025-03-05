@@ -20,4 +20,8 @@ export class CreateTaskComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onAdd(): void {
+    console.log("opening add task modal");
+  }
+
 }
