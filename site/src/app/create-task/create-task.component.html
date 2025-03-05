@@ -6,7 +6,8 @@
 </div>
 <div #createTaskModal class="create-task-modal" style="display: none">
   <div class="create-task-modal-description">
-    <input name="pomodoro-description" type="text" placeholder="What do you want to accomplish?" />
+    <input [(ngModel)]="pomodoroDescription" name="pomodoro-description" type="text"
+      placeholder="What do you want to accomplish?" />
   </div>
   <div class="create-task-modal-pomodoros">
     <h3>How many pomodoros do you think this will take?</h3>

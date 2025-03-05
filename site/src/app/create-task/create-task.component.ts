@@ -19,6 +19,7 @@ export class CreateTaskComponent implements OnInit, AfterViewInit {
   @ViewChild('createTaskButton') createTaskButton!: ElementRef;
 
   pomodoros: number = 1;
+  pomodoroDescription: string = "";
 
   faPlus = faPlus;
   faUpLong = faUpLong;
@@ -57,7 +58,12 @@ export class CreateTaskComponent implements OnInit, AfterViewInit {
   }
 
   saveTask(): void {
-    this.taskCreateService.addTask();
+    if (this.pomodoroDescription.trim() === "")
+      return;
+    this.taskCreateService.addTask(
+      this.pomodoroDescription,
+      this.pomodoros
+    );
   }
 
 }

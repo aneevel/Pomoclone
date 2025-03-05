@@ -9,7 +9,7 @@ export class TaskCreateService {
 
   constructor() { }
 
-  addTask(): void {
-    console.log("Adding task...");
+  addTask(description: string, pomodoros: number): void {
+    console.log(`Adding task with description ${description} and pomodoros ${pomodoros}`);
   }
 }
